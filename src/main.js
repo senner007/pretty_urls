@@ -36,4 +36,6 @@ $(document).ready(function () {
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
   navbar();
+
+
 })

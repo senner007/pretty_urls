@@ -1,5 +1,5 @@
 var changelog =
-`<div id="changelog_div">
+`<div id="changelog_div" title="changelog">
   <ul class="list-group">
     <li class="list-group-item active">Change log</li>
     <li class="list-group-item">Dapibus ac facilisis in</li>

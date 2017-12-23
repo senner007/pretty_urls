@@ -3,6 +3,8 @@ import {home} from "../view/home_view.js";
 import {about} from "../view/about_view.js";
 import {changelog} from "../view/changelog_view.js";
 
+var views = [home,about,changelog];
+
 var viewObj = {
   contentDiv: null,
   currentView: null,
@@ -32,29 +34,18 @@ var viewObj = {
     this.views[DOMnode].isVisible = true;
 
   },
-  views: {
-    home: {
-      id: null,
-      isLoaded: false,
-      isVisible : false,
-      domContent: home
-    },
-    about: {
-      id: null,
-      isLoaded: false,
-      isVisible : false,
-      domContent: about
-    },
-    changelog: {
-      id: null,
-      isLoaded: false,
-      isVisible : false,
-      domContent: changelog
-    }
-  }
+  views: {}
 }
 
-
+for (let view of views) {
+  let title = $(view)[0].title;
+  viewObj.views[title] = {
+    id: null,
+    isLoaded: false,
+    isVisible : false,
+    domContent: view
+  }
+};
 
 var navbar = function() {
 

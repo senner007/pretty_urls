@@ -1,5 +1,5 @@
 var home =
-`<div id="home_div" class="card text-center">
+`<div id="home_div" title="home" class="card text-center">
   <div class="card-header">
     Home
   </div>

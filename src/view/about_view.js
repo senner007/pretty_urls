@@ -1,5 +1,5 @@
 var about =
-`<div id="about_div" class="card text-center">
+`<div id="about_div" title="about" class="card text-center">
   <div class="card-header">
     About
   </div>
