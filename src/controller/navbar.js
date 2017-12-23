@@ -22,9 +22,9 @@ var viewObj = {
       elemid.show();
       console.log('DOM content is already loaded');
     } else {
-      let myContent = this.contentDiv == null ? $('#myContent') : this.contentDiv;
-      myContent.append(this.views[DOMnode].domContent);
-      this.views[DOMnode].id = myContent.find('#' + DOMnode + '_div');
+      this.contentDiv = this.contentDiv == null ? $('#myContent') : this.contentDiv;
+      this.contentDiv.append(this.views[DOMnode].domContent);
+      this.views[DOMnode].id = this.contentDiv.find('#' + DOMnode + '_div');
       console.log('DOM content inserted');
       this.views[DOMnode].isLoaded = true;
     }
