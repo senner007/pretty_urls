@@ -4,6 +4,7 @@ import {about} from "../view/about_view.js";
 import {changelog} from "../view/changelog_view.js";
 
 var viewObj = {
+  contentDiv: null,
   currentView: null,
   hideCurrent: function () {
     if(this.currentView !=null) {
@@ -21,12 +22,13 @@ var viewObj = {
       elemid.show();
       console.log('DOM content is already loaded');
     } else {
+      let myContent = this.contentDiv == null ? $('#myContent') : this.contentDiv;
       myContent.append(this.views[DOMnode].domContent);
       this.views[DOMnode].id = myContent.find('#' + DOMnode + '_div');
       console.log('DOM content inserted');
       this.views[DOMnode].isLoaded = true;
     }
-    this.currentView = DOMnode;    
+    this.currentView = DOMnode;
     this.views[DOMnode].isVisible = true;
 
   },
@@ -52,7 +54,7 @@ var viewObj = {
   }
 }
 
-var myContent = $('#myContent');
+
 
 var navbar = function() {
 
