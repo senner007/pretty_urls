@@ -24,9 +24,9 @@ var viewObj = {
       myContent.append(this.views[DOMnode].domContent);
       this.views[DOMnode].id = myContent.find('#' + DOMnode + '_div');
       console.log('DOM content inserted');
+      this.views[DOMnode].isLoaded = true;
     }
-    this.currentView = DOMnode;
-    this.views[DOMnode].isLoaded = true;
+    this.currentView = DOMnode;    
     this.views[DOMnode].isVisible = true;
 
   },
