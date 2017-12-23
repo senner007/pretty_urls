@@ -5,6 +5,7 @@ import {changelog} from "../view/changelog_view.js";
 
 var views = [home,about,changelog];
 
+// create views object with methods
 var viewObj = {
   contentDiv: null,
   currentView: null,
@@ -36,7 +37,7 @@ var viewObj = {
   },
   views: {}
 }
-
+// insert views properties
 for (let view of views) {
   let title = $(view)[0].title;
   viewObj.views[title] = {
