@@ -1,46 +1,15 @@
 import {myRouter} from "../router/router.js";
+import {view_controller} from "./view_controller.js";
 import {home} from "../view/home_view.js";
 import {about} from "../view/about_view.js";
 import {changelog} from "../view/changelog_view.js";
 
 var views = [home,about,changelog];
 
-// create views object with methods
-var viewObj = {
-  contentDiv: null,
-  currentView: null,
-  hideCurrent: function () {
-    if(this.currentView !=null) {
-      let elemid = this.views[this.currentView].id;
-      elemid.hide();
-      this.views[this.currentView].isVisible = false;
-    }
-  },
-  updateView: function (DOMnode) {
-
-    this.hideCurrent();
-
-    if (this.views[DOMnode].isLoaded) {
-      let elemid = this.views[DOMnode].id;
-      elemid.show();
-      console.log('DOM content is already loaded');
-    } else {
-      this.contentDiv = this.contentDiv == null ? $('#myContent') : this.contentDiv;
-      this.contentDiv.append(this.views[DOMnode].domContent);
-      this.views[DOMnode].id = this.contentDiv.find('#' + DOMnode + '_div');
-      console.log('DOM content inserted');
-      this.views[DOMnode].isLoaded = true;
-    }
-    this.currentView = DOMnode;
-    this.views[DOMnode].isVisible = true;
-
-  },
-  views: {}
-}
 // insert views properties
 for (let view of views) {
   let title = $(view)[0].title;
-  viewObj.views[title] = {
+  view_controller.views[title] = {
     id: null,
     isLoaded: false,
     isVisible : false,
@@ -48,18 +17,16 @@ for (let view of views) {
   }
 };
 
-var navbar = function() {
+var navbar = function(navNode) {
 
-  var navLinks = $('.navbar-nav');
-
-  navLinks.on('click','a', function (e) {
+  navNode.on('click','a', function (e) {
     e.preventDefault();
     var newPathname = this.pathname.slice(1, this.pathname.length)
-    if(viewObj.currentView == newPathname) return;
+    if(view_controller.currentView == newPathname) return;
     myRouter.navigateTo(newPathname);
-  })
+  });
 
-  return navLinks;
+  return navNode;
 };
 
-export {navbar, viewObj};
+export {navbar, view_controller};

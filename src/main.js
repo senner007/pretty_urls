@@ -1,12 +1,14 @@
-import {navbar, viewObj} from "/src/controller/navbar.js";
+import {navbar, view_controller} from "/src/controller/navbar.js";
 import {myRouter, getPathname} from "/src/router/router.js";
 
 $(document).ready(function () {
   console.log('document is ready');
+  var myContent = $('#myContent');
+  var navNode = $('.navbar-nav');
 
   myRouter.add('home', function () {
       console.log('Home page');
-      viewObj.updateView('home');
+      view_controller.updateView('home', myContent);
   });
 
   myRouter.add('', function () {
@@ -25,17 +27,17 @@ $(document).ready(function () {
 
   myRouter.add('about', function () {
       console.log('About Page');
-      viewObj.updateView('about');
+      view_controller.updateView('about', myContent);
   });
 
   myRouter.add('changelog', function () {
       console.log('Changelog Page');
-      viewObj.updateView('changelog');
+      view_controller.updateView('changelog', myContent);
   });
 
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
-  navbar();
+  navbar(navNode);
 
 
 })

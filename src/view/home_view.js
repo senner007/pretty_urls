@@ -14,5 +14,4 @@ var home =
     This is the ${title} page
   </div>
 </div>`;
-
 export {home};

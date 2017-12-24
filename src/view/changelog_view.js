@@ -10,5 +10,4 @@ var changelog =
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
 </div>`;
-
 export {changelog};
