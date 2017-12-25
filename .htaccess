@@ -4,12 +4,15 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+
 RewriteRule ^(about|changelog|home)*$ ./index.php?p=$1
 
-RewriteRule ^hello/(.)*$ ./index.php?p=$1
-#RewriteRule ^hello/(\d+)*$ ./index.php?p=$1
+RewriteRule ^changelog/(\w+)*$ ./index.php?p=$1
 
-RewriteRule ^users/(\d+)*$ ./index.php?p=$1
-RewriteRule ^threads/(\d+)*$ ./thread.php?id=$1
+#RewriteRule ^hello/(\w+)*$ ./index.php?p=$1
+#sRewriteRule ^hello/(\d+)*$ ./index.php?p=$1
 
-RewriteRule ^search/(.*)$ ./search.php?query=$1
+#RewriteRule ^users/(\d+)*$ ./index.php?p=$1
+#RewriteRule ^threads/(\d+)*$ ./thread.php?id=$1
+
+#RewriteRule ^search/(.*)$ ./search.php?query=$1

@@ -1,18 +1,26 @@
-import {navbar, view_controller} from "/src/controller/navbar.js";
+import {navbar, navbar_view_controller} from "/src/controller/navbar.js";
+import {changelog_view_controller} from "/src/controller/changelog.js";
 import {myRouter, getPathname} from "/src/router/router.js";
 
 $(document).ready(function () {
   console.log('document is ready');
+  var changelogNode;
   var myContent = $('#myContent');
+  myContent.on('inserted', function (e, view) {
+    if (view == 'changelog') {
+      console.log('changelog init')
+      changelog_view_controller.init(myContent);
+    }
+  } )
   var navNode = $('.navbar-nav');
-
   myRouter.add('home', function () {
       console.log('Home page');
-      view_controller.updateView('home', myContent);
+      navbar_view_controller.updateView('home', myContent);
   });
 
   myRouter.add('', function () {
-      myRouter.navigateTo('home');
+      console.log('Redirecting to: ' + 'home');
+      myRouter.redirectTo('home');
   });
 
 
@@ -27,17 +35,24 @@ $(document).ready(function () {
 
   myRouter.add('about', function () {
       console.log('About Page');
-      view_controller.updateView('about', myContent);
+      navbar_view_controller.updateView('about', myContent);
   });
 
   myRouter.add('changelog', function () {
-      console.log('Changelog Page');
-      view_controller.updateView('changelog', myContent);
+      console.log('Redirecting to: ' + 'changelog/' + changelog_view_controller.active);
+      myRouter.redirectTo('changelog/' + changelog_view_controller.active);
+  });
+
+  myRouter.add('changelog/(lorem|ipsum|dolor|sit|amet)', function (name) {
+    navbar_view_controller.updateView('changelog', myContent);
+    changelog_view_controller.addActive(name)
+    console.log('Hello changelog/' + name);
   });
 
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
   navbar(navNode);
+
 
 
 })

@@ -1,11 +1,43 @@
 <?php
 
-/*
-	$getPage = $_GET['p'];
-	echo "you requested page<b>: " . $getPage . "</b>";
 
-}
-*/
+	if(isset($_GET['p'])) {
+	    $url = $_GET['p'];
+			$urlLower = strtolower($url);
+			if($url != $urlLower) {
+
+					//echo $url;
+			   // unset($_GET['rewrite-strtolower-url']);
+			    $params = http_build_query($_GET);
+					//echo (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+					$p = strtolower("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+
+			    // if(strlen($params)) {
+			    //     $params = '?' . $params;
+			    // }
+			    header("Location: " . $p);
+			    exit;
+			};
+
+	}
+
+
+
+
+// if(isset($_GET['rewrite-strtolower-url'])) {
+//     $url = $_GET['rewrite-strtolower-url'];
+// 		echo $url;
+//     unset($_GET['rewrite-strtolower-url']);
+//     $params = http_build_query($_GET);
+//     if(strlen($params)) {
+//         $params = '?' . $params;
+//     }
+//     header('Location: http://' . $_SERVER['HTTP_HOST'] . '/' . strtolower($url) . $params, true, 301);
+//     exit;
+// }
+// header("HTTP/1.0 404 Not Found");
+// die('Error! Unable to convert the URL to lowercase.');
+
 ?>
 
 <!DOCTYPE html>

@@ -1,15 +1,18 @@
 import {myRouter} from "../router/router.js";
-import {view_controller} from "./view_controller.js";
+import {View_controller} from "./view_controller.js";
 import {home} from "../view/home_view.js";
 import {about} from "../view/about_view.js";
 import {changelog} from "../view/changelog_view.js";
 
 var views = [home,about,changelog];
 
+var navbar_view_controller = new View_controller();
+navbar_view_controller.views = {};
+
 // insert views properties
 for (let view of views) {
   let title = $(view)[0].title;
-  view_controller.views[title] = {
+  navbar_view_controller.views[title] = {
     id: null,
     isLoaded: false,
     isVisible : false,
@@ -17,16 +20,17 @@ for (let view of views) {
   }
 };
 
+
 var navbar = function(navNode) {
 
   navNode.on('click','a', function (e) {
     e.preventDefault();
     var newPathname = this.pathname.slice(1, this.pathname.length)
-    if(view_controller.currentView == newPathname) return;
+    if(navbar_view_controller.currentView == newPathname) return;
     myRouter.navigateTo(newPathname);
   });
 
   return navNode;
 };
 
-export {navbar, view_controller};
+export {navbar, navbar_view_controller};
