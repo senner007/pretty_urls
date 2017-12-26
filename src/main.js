@@ -6,13 +6,16 @@ $(document).ready(function () {
   console.log('document is ready');
   var changelogNode;
   var myContent = $('#myContent');
+  var navNode = $('.navbar-nav');
+
   myContent.on('inserted', function (e, view) {
     if (view == 'changelog') {
       console.log('changelog init')
-      changelog_view_controller.init(myContent);
+      changelog_view_controller.init(myContent, myRouter);
     }
-  } )
-  var navNode = $('.navbar-nav');
+  } );
+
+
   myRouter.add('home', function () {
       console.log('Home page');
       navbar_view_controller.updateView('home', myContent);
@@ -52,8 +55,6 @@ $(document).ready(function () {
 
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
-  navbar(navNode);
-
-
+  navbar(navNode, myRouter);
 
 })

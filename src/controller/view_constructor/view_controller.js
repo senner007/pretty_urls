@@ -4,7 +4,7 @@
 function View_controller () {
 
     this.currentView =  null
-    this.hideCurrent =  function () {
+    this._hideCurrent =  function () {
       if(this.currentView !=null) {
         let elemid = this.views[this.currentView].id;
         elemid.hide();
@@ -13,7 +13,7 @@ function View_controller () {
     }
     this.updateView = function (sourceNode, targetNode) {
 
-      this.hideCurrent();
+      this._hideCurrent();
 
       if (this.views[sourceNode].isLoaded) {
         let elemid = this.views[sourceNode].id;
@@ -23,9 +23,8 @@ function View_controller () {
         targetNode.append(this.views[sourceNode].domContent);
         this.views[sourceNode].id = targetNode.find('#' + sourceNode + '_div');
         console.log('DOM content inserted');
-        $(targetNode).trigger( "inserted", [ sourceNode ] );
-        // add trigger with view name loaded in callback
         this.views[sourceNode].isLoaded = true;
+        $(targetNode).trigger( "inserted", [ sourceNode ] );
       }
       this.currentView = sourceNode;
       this.views[sourceNode].isVisible = true;

@@ -3,14 +3,14 @@ function Selection_controller(o) {
 
   this.selectionParent = o.selectionParent;
 
-  this.addEvent = function () {
+  this.addEvent = function (router) {
     this.selectionParent.on('click','li', function (e) {
       e.preventDefault();
-      o.router.navigateTo('changelog/' + this.innerText.toLowerCase());
+      router.navigateTo('changelog/' + this.innerText.toLowerCase());
     });
   };
   this.selectionArray = o.selectionArray;
-  this.active = o.selectionArray[0].toLowerCase();
+  this.active = o.active;
 
   this.selection = {};
   for (let cl of o.selectionArray) {
@@ -36,10 +36,10 @@ function Selection_controller(o) {
     }
   }
 
-  this.init = function (container) {
+  this.init = function (container, router) {
     this.selectionParent = container.find('#changelog_div').find('ul');
     this.selection[this.active].id = this.selectionParent.find('.' + this.active)[0];
-    this.addEvent();
+    this.addEvent(router);
   };
 
 }

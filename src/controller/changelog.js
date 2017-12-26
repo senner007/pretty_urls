@@ -1,19 +1,17 @@
-import {changelog, changelogs} from "../view/changelog_view.js";
-import {View_controller} from "./view_constructor/view_controller.js";
+import {changelogs} from "../view/changelog_view.js";
+// import {View_controller} from "./view_constructor/view_controller.js";
 import {Selection_controller} from "./view_constructor/selection_controller.js";
-import {myRouter} from "../router/router.js";
-
-
 
 
 var changelog_view_controller = new Selection_controller({
 
   selectionParent: null,
   selectionArray: changelogs,
-  router : myRouter
-
+  active: changelogs[0].toLowerCase()
 
 });
+
+export {changelog_view_controller};
 
 
 // changelog_view_controller.addEvent = function () {
@@ -54,6 +52,3 @@ var changelog_view_controller = new Selection_controller({
 //   this.changelogs[this.active].id = this.changelogNode.find('.' + this.active)[0];
 //   this.addEvent();
 // };
-
-
-export {changelog_view_controller};

@@ -1,4 +1,3 @@
-import {myRouter} from "../router/router.js";
 import {View_controller} from "./view_constructor/view_controller.js";
 import {home} from "../view/home_view.js";
 import {about} from "../view/about_view.js";
@@ -20,14 +19,13 @@ for (let view of views) {
   }
 };
 
-
-var navbar = function(navNode) {
+var navbar = function(navNode, router) {
 
   navNode.on('click','a', function (e) {
     e.preventDefault();
     var newPathname = this.pathname.slice(1, this.pathname.length)
     if(navbar_view_controller.currentView == newPathname) return;
-    myRouter.navigateTo(newPathname);
+    router.navigateTo(newPathname);
   });
 
   return navNode;
