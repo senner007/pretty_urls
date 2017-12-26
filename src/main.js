@@ -4,7 +4,6 @@ import {myRouter, getPathname} from "/src/router/router.js";
 
 $(document).ready(function () {
   console.log('document is ready');
-  var changelogNode;
   var myContent = $('#myContent');
   var navNode = $('.navbar-nav');
 
