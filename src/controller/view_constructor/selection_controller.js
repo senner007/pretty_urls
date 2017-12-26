@@ -36,6 +36,8 @@ function Selection_controller(o) {
     }
   }
 
+  this.arrayToRoutes = this.selectionArray.join('|');
+
   this.init = function (container, router) {
     this.selectionParent = container.find('#changelog_div').find('ul');
     this.selection[this.active].id = this.selectionParent.find('.' + this.active)[0];

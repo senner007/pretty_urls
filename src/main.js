@@ -45,10 +45,9 @@ $(document).ready(function () {
       myRouter.redirectTo('changelog/' + changelog_view_controller.active);
   });
 
-  myRouter.add('changelog/(lorem|ipsum|dolor|sit|amet)', function (name) {
+  myRouter.add('changelog/(' + changelog_view_controller.arrayToRoutes + ')', function (name) {
     navbar_view_controller.updateView('changelog', myContent);
     changelog_view_controller.addActive(name)
-    console.log(changelog_view_controller)
     console.log('Hello changelog/' + name);
   });
 

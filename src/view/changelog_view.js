@@ -15,9 +15,6 @@ var changelog =
   </div>
 </div>`;
 
-console.log($(changelog).find('ul').children())
-
-
 export {
   changelog, changelogs
 };
