@@ -10,10 +10,9 @@ $(document).ready(function () {
   myContent.on('inserted', function (e, view) {
     if (view == 'changelog') {
       console.log('changelog init')
-      changelog_view_controller.init(myContent, myRouter);
+      changelog_view_controller.init(myContent.find('#changelog_div').find('ul'), myRouter);
     }
   } );
-
 
   myRouter.add('home', function () {
       console.log('Home page');
@@ -54,5 +53,6 @@ $(document).ready(function () {
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
   navbar(navNode, myRouter);
+
 
 })
