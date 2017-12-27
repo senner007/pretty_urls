@@ -8,7 +8,8 @@ var changelog_view_controller = new Selection_controller({
 
   selectionParent: null,
   selectionArray: changelogs,
-  active: changelogs[0].toLowerCase()
+  active: changelogs[0].toLowerCase(),
+  pathName: 'changelog/'
 
 });
 
