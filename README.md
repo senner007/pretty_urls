@@ -1,5 +1,8 @@
 # pretty_urls
 
+Single-page app and pretty urls with MVC with js(or jQuery), bootstrap and php.
+Demo : codetoshow.com
+
 TODO:
--install jquery and boostrap via npm
--install webpack and babel
+-use jquery and boostrap via npm
+-use webpack and babel

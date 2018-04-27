@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   myContent.on('inserted', function (e, view) {
     if (view == 'changelog') {
-      console.log('changelog init')
+      console.log('changelog init');
       changelog_view_controller.init(myContent.find('#changelog_div').find('ul'), myRouter);
     }
   } );
