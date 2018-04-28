@@ -52,7 +52,7 @@ $(document).ready(function () {
 
   myRouter.addUriListener();
   myRouter.navigateTo(getPathname);
-  navbar(navNode, myRouter);
+  navbar(getPathname, navNode, myRouter);
 
 
 })

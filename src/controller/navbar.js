@@ -19,16 +19,30 @@ for (let view of views) {
   }
 };
 
-var navbar = function(navNode, router) {
+var navbar = function(getPathName, navNode, router) {
+  // add active class to li whoose 'a' tag text matches initial pathname url
+  // TODO : make better solution
+  var newpath = getPathName.replace("//", "")
+  navNode.find("a:contains('" + newpath.split('/')[0] + "')").addClass('active');
 
-  navNode.on('click','a', function (e) {
+  navNode.on('click','li', function (e) {
+   
     e.preventDefault();
-    var newPathname = this.pathname.slice(1, this.pathname.length)
+    $(this).parent().find('.active').removeClass('active'); // remove previous .active class
+    $(this).addClass('active'); // set new active class
+    var newPathname = this.firstElementChild.pathname.slice(1, this.firstElementChild.pathname.length)
     if(navbar_view_controller.currentView == newPathname) return;
+    
     router.navigateTo(newPathname);
   });
 
   return navNode;
 };
+// overwrite jquery contains to search for case-insensitive text
+$.expr[":"].contains = $.expr.createPseudo(function (arg) {
+  return function (elem) {
+    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+  };
+});
 
 export {navbar, navbar_view_controller};
