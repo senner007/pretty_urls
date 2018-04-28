@@ -8,7 +8,7 @@ var about =
   <div class="card-body">
     <h4 class="card-title">${titleUpper}</h4>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Get me JSON data from model</a>
   </div>
   <div class="card-footer text-muted">
     This is the ${title} page

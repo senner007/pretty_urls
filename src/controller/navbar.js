@@ -20,7 +20,6 @@ for (let view of views) {
     domContent: template
   }
 };
-
 var navbar = function(getPathName, navNode, router) {
   // add active class to li whoose 'a' tag text matches initial pathname url
   // TODO : make better solution
