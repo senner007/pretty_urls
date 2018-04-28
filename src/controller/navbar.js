@@ -24,7 +24,8 @@ var navbar = function(getPathName, navNode, router) {
   // TODO : make better solution
   var newpath = getPathName.replace("//", "")
   console.log(newpath.split('/')[0])
-  navNode.find("a:contains('" + (newpath != "" ? newpath.split(' / ')[0] : 'home') + "')").addClass('active');
+  console.log(navNode.find("a:contains('" + newpath.split('/')[0] + "')"))
+  navNode.find("a:contains('" + (newpath != "" ? newpath.split('/')[0] : 'home') + "')").addClass('active');
 
   navNode.on('click','li', function (e) {
    
