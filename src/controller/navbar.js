@@ -23,7 +23,8 @@ var navbar = function(getPathName, navNode, router) {
   // add active class to li whoose 'a' tag text matches initial pathname url
   // TODO : make better solution
   var newpath = getPathName.replace("//", "")
-  navNode.find("a:contains('" + newpath.split('/')[0] + "')").addClass('active');
+  console.log(newpath.split('/')[0])
+  navNode.find("a:contains('" + (newpath != "" ? newpath.split(' / ')[0] : 'home') + "')").addClass('active');
 
   navNode.on('click','li', function (e) {
    
