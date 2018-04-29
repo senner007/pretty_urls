@@ -29,7 +29,16 @@ function View_controller () {
       this.currentView = sourceNode;
       this.views[sourceNode].isVisible = true;
     }
+    this.views = {};
+
 }
+
+// overwrite jquery contains to search for case-insensitive text
+$.expr[":"].contains = $.expr.createPseudo(function (arg) { // export me!
+  return function (elem) {
+    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+  };
+});
 
 
 export {View_controller}

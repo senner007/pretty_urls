@@ -1,15 +1,24 @@
 {
-  "name": "pretty_urls",
+  "name": "prettyurls",
   "version": "1.0.0",
-  "description": "",
+  "description": "Single-page app and pretty urls with MVC, js(or jQuery), bootstrap and php.\r [Demo](http://www.codetoshow.com)",
   "main": "index.js",
+  "dependencies": {
+    "vanilla-router": "^1.2.5"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senner007/pretty_urls.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "vanilla-router": "^1.2.5"
-  }
+  "bugs": {
+    "url": "https://github.com/senner007/pretty_urls/issues"
+  },
+  "homepage": "https://github.com/senner007/pretty_urls#readme",
+  "keywords": []
 }

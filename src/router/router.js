@@ -1,4 +1,4 @@
-import {Router} from "/node_modules/vanilla-router/dist/vanilla-router.js";
+import {Router} from "../../node_modules/vanilla-router/dist/vanilla-router.js";
 
 var myRouter = new Router({
     mode: 'history',

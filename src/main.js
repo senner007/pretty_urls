@@ -1,6 +1,8 @@
-import {navbar, navbar_view_controller} from "/src/controller/navbar.js";
-import {changelog_view_controller} from "/src/controller/changelog.js";
-import {myRouter, getPathname} from "/src/router/router.js";
+import {navbar} from "./controller/navbar.js";
+import {navbar_view_controller } from "./controller/mainController.js";
+import {changelog_view_controller} from "./controller/changelog.js";
+import {myRouter, getPathname} from "./router/router.js";
+
 
 $(document).ready(function () {
   console.log('document is ready');
@@ -56,3 +58,4 @@ $(document).ready(function () {
 
 
 })
+

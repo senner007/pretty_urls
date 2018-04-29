@@ -1,25 +1,5 @@
-import {View_controller} from "./view_constructor/view_controller.js";
-import {home} from "../view/home_view.js";
-import {about} from "../view/about_view.js";
-import {changelog} from "../view/changelog_view.js";
+import { navbar_view_controller } from "./mainController.js";
 
-var views = [home,about,changelog];
-
-var navbar_view_controller = new View_controller();
-navbar_view_controller.views = {};
-
-// insert views properties
-for (let view of views) {
-  var template = $(view)
-  template.filter('div').find('.card-footer').css('font-size', '32px'); // exemplifying manipulation prior to insertion
-  let title = $(view)[0].title;
-  navbar_view_controller.views[title] = {
-    id: null,
-    isLoaded: false,
-    isVisible : false,
-    domContent: template
-  }
-};
 var navbar = function(getPathName, navNode, router) {
   // add active class to li whoose 'a' tag text matches initial pathname url
   // TODO : make better solution
@@ -41,11 +21,6 @@ var navbar = function(getPathName, navNode, router) {
 
   return navNode;
 };
-// overwrite jquery contains to search for case-insensitive text
-$.expr[":"].contains = $.expr.createPseudo(function (arg) {
-  return function (elem) {
-    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-  };
-});
 
-export {navbar, navbar_view_controller};
+export {navbar}
+
