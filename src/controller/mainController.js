@@ -7,19 +7,15 @@ const homeView = $(home); // VIEWS as $ reference objects
 const aboutView = $(about);
 const changelogView = $(changelog);
 
-var navbar_view_controller = new View_controller(); // new instantiation of view controller
-
-// insert views
-for (let view of [homeView, aboutView, changelogView]) {
-    view.filter('div').find('.card-footer').css('font-size', '32px'); // exemplifying manipulation prior to insertion
-    let title = $(view)[0].title;
-    navbar_view_controller.views[title] = {
-        id: null,
-        isLoaded: false,
-        isVisible: false,
-        domContent: view
+var navbar_view_controller = new View_controller({  // new instantiation of view controller
+    views: [homeView, aboutView, changelogView],
+    beforeInsert: function () {
+        this.views[1].filter('div').find('.card-footer').css('font-size', '32px'); // exemplifying manipulation prior to insertion - filter nneeded?
+        this.views[1].filter('div').find('.card-footer').removeClass('text-muted').css('color', 'red') // overwrite bootstrap css by first removing class
     }
-};
+});
+
+
 
 export { navbar_view_controller };
 export { homeView, aboutView, changelogView }
