@@ -7,7 +7,10 @@ var model = {
         }, function () {
             console.log('error');
         })).then(function (data) { 
-           callback(data);
+            setTimeout(function () {
+                callback(data);    
+            }, 3000);
+           
         });
     }
 }
