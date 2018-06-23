@@ -8,9 +8,14 @@ aboutView.find('.btn').on('click', function (e) { // get json via model
     //Loading animation test
     aboutView.find('.card-header').html("<div class='saving'>Loading<span>.</span><span>.</span><span>.</span></div>")
     model.getJson(function(data) { // Callback
-        aboutView.find('.card-header').text(data.about.text.data); // display json data
+        aboutView.find('.card-header').text(data.data[0].title); // display json data
+
     });
 })
+
+// function hello() {};
+// export {hello};
+
 
 
 

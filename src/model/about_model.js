@@ -1,17 +1,22 @@
-'use strict';
+import axios from 'axios';
+
+console.log(axios);
+
 var model = {
     about: "stuff",
     getJson : function (callback) {
-        $.when($.getJSON('src/model/stuff.json', function () {
-            console.log('sucess');
-        }, function () {
-            console.log('error');
-        })).then(function (data) { 
-            setTimeout(function () {
-                callback(data);    
-            }, 3000);
-           
-        });
+
+        axios.get('http://localhost/post')
+            .then(function (response) {
+                console.log(response);
+                setTimeout(function () { // simulate server delay
+                         callback(response);    
+                     }, 3000);
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 }
 

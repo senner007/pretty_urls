@@ -4,6 +4,7 @@
   "description": "Single-page app and pretty urls with MVC, js(or jQuery), bootstrap and php.\r [Demo](http://www.codetoshow.com)",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "vanilla-router": "^1.2.5"
   },
   "devDependencies": {},
