@@ -8,8 +8,8 @@ parcel index.html
 
 #### TO BUILD:
 - parcel build src/main.js
-- insert php code from index.php to dist/index.html and rename to index.php
-- copy dist to ftp
+- rename /dist/index.html to /dist/index.php
+- copy /dist to ftp
 
 #### TODO:
 - properly update navbar text highlight on history back/forward
