@@ -7,10 +7,6 @@ var myRouter = new Router({
     }
 });
 
-myRouter.redirectTo = function (dest) {
-  myRouter.navigateTo(dest);
-}
-
 var pathArray = window.location.pathname.split( '/' );
 
 var getPathname = "";
