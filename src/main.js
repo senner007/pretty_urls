@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
   myRouter.add('', function () {
-      console.log('Redirecting to: ' + 'home');
+      console.log('Redirecting to: home');
       myRouter.redirectTo('home');
   });
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
   });
 
   myRouter.add('changelog', function () {
-      console.log('Redirecting to: ' + 'changelog/' + changelog_view_controller.active);
+      console.log('Redirecting to: changelog/' + changelog_view_controller.active);
       myRouter.redirectTo('changelog/' + changelog_view_controller.active);
   });
 
