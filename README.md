@@ -11,8 +11,8 @@ parcel index.html
 - insert php code from index.php to dist/index.html and rename to index.php
 - copy dist to ftp
 
-TODO:
--implement php login 
--model to php - mysql
--use bootstrap 4 grid system
--use jquery and boostrap via npm
+#### TODO:
+- properly update navbar text highlight on history back/forward
+- connect to php rest api
+- use bootstrap 4 via import
+- use jquery via import
