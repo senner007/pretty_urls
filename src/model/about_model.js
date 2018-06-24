@@ -1,14 +1,12 @@
 import axios from 'axios';
 
-console.log(axios);
 
 var model = {
     about: "stuff",
     getJson : function (callback) {
 
-        axios.get('http://localhost/post')
+        axios.get('https://nielshtg.dk/post')
             .then(function (response) {
-                console.log(response);
                 setTimeout(function () { // simulate server delay
                          callback(response);    
                      }, 3000);
