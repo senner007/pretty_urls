@@ -1,7 +1,7 @@
 import {navbar} from "./controller/navbar.js";
 import {navbar_view_controller } from "./controller/mainController.js";
 import {changelog_view_controller} from "./controller/changelog.js";
-import {hello} from "./controller/about.js";
+import {about_view_controller} from "./controller/about.js";
 import {myRouter, getPathname} from "./router/router.js";
 
 
@@ -40,6 +40,7 @@ $(document).ready(function () {
 
   myRouter.add('about', function () {
       console.log('About Page');
+      about_view_controller.init();
       navbar_view_controller.updateView('about', myContent);
   });
 

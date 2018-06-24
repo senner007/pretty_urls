@@ -15,7 +15,5 @@ var navbar_view_controller = new View_controller({  // new instantiation of view
     }
 });
 
-
-
 export { navbar_view_controller };
 export { homeView, aboutView, changelogView }
