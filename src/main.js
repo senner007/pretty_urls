@@ -1,6 +1,11 @@
+
+
 import $ from 'jquery';
-//import 'bootstrap/dist/css/bootstrap.css';
+// css files must be placed in html headers
+// import '../css/loadingStyle.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
+
 import {navbar} from "./controller/navbar.js";
 import {navbar_view_controller } from "./controller/mainController.js";
 import {changelog_view_controller} from "./controller/changelog.js";
