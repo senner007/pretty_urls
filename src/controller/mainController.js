@@ -1,7 +1,9 @@
+import $ from 'jquery';
 import { View_controller } from "./view_constructor/view_controller.js";
 import { home } from "../view/home_view.js";
 import { about } from "../view/about_view.js";
 import { changelog } from "../view/changelog_view.js";
+
 
 const homeView = $(home); // VIEWS as $ reference objects
 const aboutView = $(about);

@@ -1,3 +1,4 @@
+import $ from 'jquery';
 function View_controller(o) {
 
   this.views = {};

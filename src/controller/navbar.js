@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { navbar_view_controller } from "./mainController.js";
 
 var navbar = function(getPathName, navNode, router) {

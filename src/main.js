@@ -1,3 +1,6 @@
+import $ from 'jquery';
+//import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap';
 import {navbar} from "./controller/navbar.js";
 import {navbar_view_controller } from "./controller/mainController.js";
 import {changelog_view_controller} from "./controller/changelog.js";
