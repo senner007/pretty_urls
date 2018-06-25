@@ -10,9 +10,14 @@
     "popper.js": "^1.14.3",
     "vanilla-router": "^1.2.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ftp-deploy": "^2.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/main.js",
+    "deploy": "node deploy",
+    "buildDeploy": "parcel build src/main.js && npm run deploy"
   },
   "repository": {
     "type": "git",
