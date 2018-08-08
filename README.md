@@ -1,7 +1,7 @@
 # pretty_urls
 
 Single-page app and pretty urls with MVC, js(or jQuery), bootstrap and php.
-[Demo](http://www.codetoshow.com)
+[Demo](https://www.codetoshow.com)
 
 #### TO RUN:
 parcel index.html
